@@ -7,6 +7,7 @@ use Dcat\Admin\Form\Field;
 use Dcat\Admin\Form\Field\MultipleSelect;
 use Dcat\Admin\Form\Field\Select;
 use Dcat\Admin\Form\Field\Text;
+use Dcat\Admin\Form\Field\SwitchField;
 use Dcat\Admin\Grid;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;
@@ -51,6 +52,20 @@ class QuickCreate implements Renderable
     protected function formatPlaceholder($placeholder)
     {
         return array_filter((array) $placeholder);
+    }
+    
+    /**
+     * @param  string  $column
+     * @param  string  $placeholder
+     * @return SwitchField
+     */
+    public function switch($column, $placeholder = '')
+    {
+        $field = new SwitchField($column, $this->formatPlaceholder($placeholder));
+
+        $this->addField($field);
+
+        return $field;
     }
 
     /**
