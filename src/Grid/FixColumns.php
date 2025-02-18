@@ -200,7 +200,7 @@ class FixColumns
             }
         });
         $('.table-fixed-right,.table-fixed-left').each(function (k, v) {
-            $(v).css({'max-height': (($(v).data('height') || height) - 15) + 'px'});
+            $(v).css({'max-height': (($(v).data('height') || height)) + 'px'});
         });
 
         $tableMain.scroll(function () {
