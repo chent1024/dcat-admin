@@ -193,10 +193,10 @@ class FixColumns
             var tableHight = $(v).find('.custom-data-table.table').eq(0).height();
             var maxHeight = $(v).data('height') || (height >= tableHight ? tableHight : height);
 
-            $(v).css({'max-height': maxHeight + 'px'});
+            $(v).css({'max-height': (maxHeight+30) + 'px'});
 
             if (maxHeight < tableHight) {
-                $(v).parents('.tables-container').find('.table-fixed-right').css({right: '12px'})
+                $(v).parents('.tables-container').find('.table-fixed-right').css({right: '10px'})
             }
         });
         $('.table-fixed-right,.table-fixed-left').each(function (k, v) {
